@@ -1,0 +1,129 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+#get_ipython().run_line_magic('run', 'init.ipynb')
+import torch
+import numpy as np
+import pandas as pd
+import matchzoo as mz
+print('matchzoo version', mz.__version__)
+
+
+# In[2]:
+ranking_task = mz.tasks.Ranking(losses=mz.losses.RankHingeLoss())
+ranking_task.metrics = [
+    mz.metrics.NormalizedDiscountedCumulativeGain(k=3),
+    mz.metrics.NormalizedDiscountedCumulativeGain(k=5),
+    mz.metrics.MeanAveragePrecision()
+]
+
+
+print('data loading ...')
+train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
+dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
+test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+print('data loaded as `train_pack_raw` `dev_pack_raw` `test_pack_raw`')
+
+
+preprocessor = mz.preprocessors.BasicPreprocessor(
+    truncated_length_left = 10,
+    truncated_length_right = 40,
+    filter_low_freq = 2
+)
+
+
+# In[3]:
+
+
+train_pack_processed = preprocessor.fit_transform(train_pack_raw)
+dev_pack_processed = preprocessor.transform(dev_pack_raw)
+test_pack_processed = preprocessor.transform(test_pack_raw)
+
+
+# In[4]:
+
+
+preprocessor.context
+
+
+# In[5]:
+
+
+glove_embedding = mz.datasets.embeddings.load_glove_embedding(dimension=100)
+term_index = preprocessor.context['vocab_unit'].state['term_index']
+embedding_matrix = glove_embedding.build_matrix(term_index)
+l2_norm = np.sqrt((embedding_matrix * embedding_matrix).sum(axis=1))
+embedding_matrix = embedding_matrix / l2_norm[:, np.newaxis]
+
+
+# In[6]:
+
+
+trainset = mz.dataloader.Dataset(
+    data_pack=train_pack_processed,
+    mode='pair',
+    batch_size=20,
+    resample=True,
+    sort=False,
+    num_dup=5,
+    num_neg=1
+)
+testset = mz.dataloader.Dataset(
+    batch_size=1,
+    shuffle=False,
+    data_pack=test_pack_processed
+)
+
+
+# In[7]:
+
+
+padding_callback = mz.models.KNRM.get_default_padding_callback()
+
+trainloader = mz.dataloader.DataLoader(
+    dataset=trainset,
+    stage='train',
+    callback=padding_callback
+)
+testloader = mz.dataloader.DataLoader(
+    dataset=testset,
+    stage='dev',
+    callback=padding_callback
+)
+
+
+# In[8]:
+
+
+model = mz.models.KNRM()
+
+model.params['task'] = ranking_task
+model.params['embedding'] = embedding_matrix
+model.params['kernel_num'] = 21
+model.params['sigma'] = 0.1
+model.params['exact_sigma'] = 0.001
+
+model.build()
+
+print(model)
+print('Trainable params: ', sum(p.numel() for p in model.parameters() if p.requires_grad))
+
+
+# In[9]:
+interp = mz.interpret.Grad(
+     device='cpu',
+     model=model,
+     trainloader=trainloader,
+     validloader=testloader,
+     checkpoint='model.pt',
+     save_dir='save_knrm',
+     result_prefix='result.pt'
+)
+
+
+# In[10]:
+interp.gradXinput()
+
