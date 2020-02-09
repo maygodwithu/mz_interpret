@@ -79,6 +79,8 @@ class SNRM(BaseModel):
     def build(self):
         """Build model structure."""
         self.embedding = self._make_default_embedding_layer()
+        #print('embedding=', self.embedding)
+        #print('emb test=', self.embedding(torch.tensor([1]).long()))
         self.mlp = self._make_layers(
             self._params['conv1_channel'],
             self._params['conv2_channel'],
@@ -165,7 +167,50 @@ class SNRM(BaseModel):
                    'drepr' : d1_repr}
 
         return outputs
-       
+
+    def gradcam_forward(self, inputs):
+        embed_query, embed_doc = self._make_input(inputs) 
+
+        q_act = self.mlp(embed_query.float())
+        d_act = self.mlp(embed_doc.float())
+
+        q = Variable(q_act, requires_grad=True)
+        d = Variable(d_act, requires_grad=True)
+
+        q_repr = self.out(q)
+        d1_repr = self.out(d)
+
+        out = torch.sum(q_repr * d1_repr, 1, keepdim=True) 
+
+        out[0].backward()
+
+        q_grad_val = q.grad.cpu().data.numpy()
+        d_grad_val = d.grad.cpu().data.numpy()
+
+        q_act_val = q_act.cpu().data.numpy()[0, :] 
+        d_act_val = d_act.cpu().data.numpy()[0, :] 
+
+        qweights = np.mean(q_grad_val, axis=(2, 3))[0, :]
+        qcam = np.zeros(q_act_val.shape[1:], dtype=np.float32)
+        for i, w in enumerate(qweights):
+            qcam += w * q_act_val[i, :, :] 
+
+        dweights = np.mean(d_grad_val, axis=(2, 3))[0, :]
+        dcam = np.zeros(d_act_val.shape[1:], dtype=np.float32)
+        for i, w in enumerate(dweights):
+            dcam += w * d_act_val[i, :, :] 
+
+        outputs = {'score' : out[0],
+                   'qgrad' : q_grad_val,
+                   'dgrad' : d_grad_val,
+                   'qcam' : torch.from_numpy(qcam),
+                   'dcam' : torch.from_numpy(dcam),
+                   'qrepr' : q_repr,
+                   'drepr' : d1_repr}
+
+        return outputs
+
+      
     def _one_forward(self, x):
         out = self.mlp(x)
         return self.out(out)

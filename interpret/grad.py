@@ -418,4 +418,29 @@ class Grad:
 
         return None
 
+    def gradCam(self) -> np.array:
+        """
+        Generate grad * input of score
+
+        :return: np array of energy 
+
+        """
+        if(self._result_pre is None):
+            self._result_pre = 'result_cam.pt'
+
+        self._model.eval()
+        num=0
+        for batch in self._validloader:
+            resultfile = self._save_dir.joinpath(self._result_pre + str(num))
+            inputs = batch[0]
+            outputs = self._model.gradcam_forward(inputs)
+            outputs.update(inputs)
+            torch.save(outputs, resultfile) 
+            num += 1
+            if(num > 10):
+                break
+
+        return None
+
+
 
