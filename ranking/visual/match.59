@@ -1,0 +1,317 @@
+vocab read
+term of 0 index =  <PAD>
+../save_match_pyramid_ms/result_cam.pt58
+tensor([[111320, 171750, 430974,  90453, 396128, 440770]], device='cuda:0')
+tensor([6.3061], device='cuda:0', requires_grad=True)
+torch.Size([6, 510])
+torch.Size([1, 1, 6, 510])
+cam mean= tensor(0.0041)
+cam var= tensor(1.6624e-05)
+query =  ['blood', 'diseases', 'that', 'are', 'sexually', 'transmitted']
+doc =  ['what', 'kind', 'of', 'doctor', 'do', 'i', 'need', 'slideshow', 'dental', 'oral', 'health', 'quiz', 'causes', 'of', 'a', 'heart', 'attack', 'slideshow', 'who', 'discovered', 'penicillin', 'who', 'discovered', 'penicillin', 'who', 'discovered', 'penicillin', 'in', '1928', 'alexander', 'fleming', 'noted', 'that', 'mold', 'belonging', 'to', 'the', 'genus', 'penicillium', 'inhibited', 'the', 'growth', 'of', 'bacteria', 'fleming', 'called', 'this', 'unknown', 'antibacterial', 'substance', 'penicillin', 'ten', 'years', 'later', 'a', 'group', 'at', 'oxford', 'university', 'began', 'to', 'investigate', 'penicillin', 'in', 'laboratory', 'mice', 'penicillin', 'was', 'hailed', 'as', 'a', 'miracle', 'drug', 'and', 'saved', 'countless', 'lives', 'in', 'world', 'war', 'ii', 'what', 'are', 'penicillin', 'antibiotics', 'penicillins', 'are', 'antibiotics', 'used', 'to', 'treat', 'bacterial', 'infections', 'that', 'are', 'derived', 'from', 'the', 'antibiotic', 'penicillin', 'what', 'are', 'the', 'uses', 'for', 'penicillin', 'antibiotics', 'today', 'many', 'derivatives', 'of', 'penicillin', 'have', 'been', 'developed', 'that', 'inhibit', 'more', 'types', 'of', 'bacteria', 'than', 'the', 'original', 'drug', 'penicillin', 'itself', 'is', 'active', 'including', 'streptococcus', 'pneumoniae', 'listeria', 'neisseria', 'gonorrhoeae', 'clostridium', 'and', 'peptostreptococcus', 'however', 'most', 'staphylococci', 'now', 'are', 'resistant', 'to', 'penicillin', 'other', 'penicillin', 'antibiotics', 'are', 'effective', 'against', 'influenzae', 'e', 'coli', 'pneumococci', 'certain', 'strains', 'of', 'staphylococci', 'salmonella', 'shigella', 'pseudomonas', 'aeruginosa', 'andmany', 'other', 'types', 'of', 'bacteria', 'penicillin', 'antibiotics', 'are', 'used', 'to', 'treat', 'many', 'types', 'of', 'infections', 'caused', 'by', 'susceptible', 'bacteria', 'they', 'are', 'used', 'to', 'treat', 'infections', 'of', 'the', 'middle', 'ear', 'sinuses', 'stomach', 'and', 'intestines', 'bladder', 'and', 'kidney', 'they', 'also', 'are', 'used', 'for', 'blood', 'infections', 'sepsis', 'uncomplicated', 'gonorrhea', 'meningitis', 'endocarditis', 'andother', 'serious', 'infections', 'what', 'are', 'examples', 'of', 'penicillin', 'antibiotics', 'available', 'in', 'the', 'us', 'penicillin', 'g', 'pfizerpen', 'amoxicillin', 'amoxil', 'augmentin', 'ampicillin', 'unasyn', 'nafcillin', 'oxacillin', 'bactocill', 'dicloxacillin', 'dycill', 'dynapen', 'are', 'discontinued', 'brands', 'in', 'the', 'us', 'generic', 'is', 'available', 'cloxacillin', 'discontinued', 'in', 'the', 'us', 'piperacillin', 'pipracil', 'zosyn', 'ticarcillin', 'ticar', 'discontinued', 'in', 'the', 'us', 'generic', 'is', 'not', 'available', 'discontinued', 'in', 'the', 'us', 'and', 'a', 'generic', 'is', 'not', 'available', 'what', 'are', 'the', 'side', 'effects', 'of', 'penicillin', 'antibiotics', 'side', 'effects', 'of', 'penicillin', 'antibiotics', 'includediarrhea', 'dizziness', 'heartburn', 'insomnia', 'nausea', 'itching', 'vomiting', 'confusion', 'abdominal', 'pain', 'easy', 'bruising', 'bleeding', 'rash', 'andallergic', 'reactions', 'individuals', 'who', 'are', 'allergic', 'to', 'the', 'cephalosporin', 'class', 'of', 'antibiotics', 'which', 'are', 'related', 'to', 'the', 'penicillins', 'for', 'example', 'cefaclor', 'ceclor', 'cephalexin', 'keflex', 'and', 'cefprozil', 'cefzil', 'may', 'or', 'may', 'not', 'be', 'allergic', 'to', 'penicillins', 'serious', 'but', 'rare', 'reactions', 'includeseizures', 'kidney', 'problems', 'oral', 'fungal', 'infections', 'severe', 'allergic', 'reactions', 'anaphylaxis', 'andlow', 'blood', 'platelet', 'levels', 'thrombocytopenia', 'or', 'red', 'blood', 'cell', 'count', 'like', 'other', 'antibiotics', 'penicillin', 'antibiotics', 'can', 'alter', 'the', 'normal', 'bacteria', 'in', 'the', 'colon', 'and', 'encourage', 'overgrowth', 'of', 'some', 'bacteria', 'such', 'as', 'clostridium', 'difficile', 'which', 'causes', 'inflammation', 'of', 'the', 'colon', 'difficile', 'colitis', 'or', 'pseudomembranous', 'colitis', 'signs', 'and', 'symptoms', 'of', 'difficile', 'colitis', 'includediarrhea', 'fever', 'abdominal', 'pain', 'andpossibly', 'shock', 'what', 'drugs', 'interact', 'with', 'penicillin', 'antibiotics', 'penicillin', 'antibiotics', 'have', 'few', 'important', 'drug', 'interactions', 'probenecid', 'benemid', 'causes', 'an', 'increase', 'in', 'the', 'amount', 'of', 'penicillins', 'in', 'the', 'body', 'by', 'preventing', 'excretion', 'of', 'penicillin', 'by', 'the', 'kidneys', 'combining', 'ampicillin', 'with', 'allopurinol', 'zyloprim', 'can', 'increase', 'the', 'incidence', 'of', 'skin', 'rash', 'penicillin', 'antibiotics', 'may', 'reduce', 'the', 'effect', 'of', 'bcg', 'live', 'vaccine', 'and', 'typhoid', 'live', 'vaccine', 'what', 'formulations', 'of', 'penicillin', 'antibiotics', 'are', 'available', 'penicillin', 'antibiotics', 'are', 'available', 'capsules', 'powder', 'for', 'oral', 'suspension', 'for', 'injection', 'are', 'penicillin', 'antibiotics', 'safe', 'to', 'take', 'during', 'pregnancy', 'or', 'while', 'breastfeeding', 'penicillin', 'antibiotics', 'are', 'considered', 'safe', 'to', 'use', 'during', 'pregnancy', 'although', 'small', 'amounts', 'of']
+0 tensor(0.0219) tensor(0) tensor(92) blood infections
+1 tensor(0.0216) tensor(0) tensor(91) blood bacterial
+2 tensor(0.0213) tensor(1) tensor(92) diseases infections
+3 tensor(0.0205) tensor(1) tensor(91) diseases bacterial
+4 tensor(0.0197) tensor(1) tensor(314) diseases antibiotics
+5 tensor(0.0185) tensor(1) tensor(305) diseases individuals
+6 tensor(0.0185) tensor(1) tensor(306) diseases who
+7 tensor(0.0185) tensor(1) tensor(200) diseases they
+8 tensor(0.0182) tensor(1) tensor(315) diseases which
+9 tensor(0.0182) tensor(0) tensor(304) blood reactions
+10 tensor(0.0181) tensor(1) tensor(90) diseases treat
+11 tensor(0.0173) tensor(0) tensor(305) blood individuals
+12 tensor(0.0172) tensor(0) tensor(90) blood treat
+13 tensor(0.0168) tensor(2) tensor(315) that which
+14 tensor(0.0167) tensor(1) tensor(201) diseases also
+15 tensor(0.0167) tensor(1) tensor(199) diseases kidney
+16 tensor(0.0164) tensor(2) tensor(314) that antibiotics
+17 tensor(0.0163) tensor(1) tensor(304) diseases reactions
+18 tensor(0.0163) tensor(1) tensor(182) diseases bacteria
+19 tensor(0.0163) tensor(1) tensor(214) diseases infections
+20 tensor(0.0162) tensor(1) tensor(213) diseases serious
+21 tensor(0.0162) tensor(0) tensor(93) blood that
+22 tensor(0.0161) tensor(1) tensor(93) diseases that
+23 tensor(0.0160) tensor(0) tensor(200) blood they
+24 tensor(0.0159) tensor(1) tensor(169) diseases penicillin
+25 tensor(0.0158) tensor(1) tensor(313) diseases of
+26 tensor(0.0158) tensor(2) tensor(92) that infections
+27 tensor(0.0155) tensor(1) tensor(141) diseases now
+28 tensor(0.0155) tensor(1) tensor(140) diseases staphylococci
+29 tensor(0.0155) tensor(0) tensor(214) blood infections
+30 tensor(0.0155) tensor(1) tensor(170) diseases antibiotics
+31 tensor(0.0153) tensor(1) tensor(183) diseases they
+32 tensor(0.0152) tensor(1) tensor(345) diseases oral
+33 tensor(0.0150) tensor(1) tensor(346) diseases fungal
+34 tensor(0.0150) tensor(1) tensor(149) diseases are
+35 tensor(0.0149) tensor(2) tensor(200) that they
+36 tensor(0.0148) tensor(2) tensor(306) that who
+37 tensor(0.0147) tensor(2) tensor(91) that bacterial
+38 tensor(0.0147) tensor(0) tensor(303) blood andallergic
+39 tensor(0.0146) tensor(0) tensor(99) blood penicillin
+40 tensor(0.0146) tensor(1) tensor(181) diseases susceptible
+41 tensor(0.0146) tensor(0) tensor(199) blood kidney
+42 tensor(0.0146) tensor(0) tensor(314) blood antibiotics
+43 tensor(0.0146) tensor(1) tensor(448) diseases increase
+44 tensor(0.0144) tensor(2) tensor(305) that individuals
+45 tensor(0.0144) tensor(1) tensor(99) diseases penicillin
+46 tensor(0.0143) tensor(2) tensor(199) that kidney
+47 tensor(0.0142) tensor(0) tensor(306) blood who
+48 tensor(0.0141) tensor(1) tensor(202) diseases are
+49 tensor(0.0141) tensor(1) tensor(139) diseases most
+50 tensor(0.0141) tensor(2) tensor(90) that treat
+51 tensor(0.0140) tensor(1) tensor(142) diseases are
+52 tensor(0.0140) tensor(0) tensor(201) blood also
+53 tensor(0.0140) tensor(0) tensor(213) blood serious
+54 tensor(0.0140) tensor(0) tensor(315) blood which
+55 tensor(0.0139) tensor(1) tensor(180) diseases by
+56 tensor(0.0139) tensor(1) tensor(100) diseases what
+57 tensor(0.0138) tensor(0) tensor(149) blood are
+58 tensor(0.0138) tensor(0) tensor(313) blood of
+59 tensor(0.0138) tensor(1) tensor(347) diseases infections
+60 tensor(0.0138) tensor(1) tensor(385) diseases which
+61 tensor(0.0137) tensor(1) tensor(473) diseases are
+62 tensor(0.0136) tensor(2) tensor(141) that now
+63 tensor(0.0136) tensor(1) tensor(333) diseases not
+64 tensor(0.0135) tensor(2) tensor(214) that infections
+65 tensor(0.0135) tensor(1) tensor(212) diseases andother
+66 tensor(0.0135) tensor(1) tensor(184) diseases are
+67 tensor(0.0133) tensor(1) tensor(215) diseases what
+68 tensor(0.0133) tensor(0) tensor(448) blood increase
+69 tensor(0.0133) tensor(0) tensor(100) blood what
+70 tensor(0.0132) tensor(1) tensor(463) diseases vaccine
+71 tensor(0.0131) tensor(0) tensor(182) blood bacteria
+72 tensor(0.0131) tensor(1) tensor(330) diseases may
+73 tensor(0.0131) tensor(1) tensor(113) diseases been
+74 tensor(0.0131) tensor(1) tensor(331) diseases or
+75 tensor(0.0131) tensor(2) tensor(201) that also
+76 tensor(0.0131) tensor(1) tensor(395) diseases colitis
+77 tensor(0.0130) tensor(2) tensor(182) that bacteria
+78 tensor(0.0130) tensor(1) tensor(303) diseases andallergic
+79 tensor(0.0130) tensor(1) tensor(332) diseases may
+80 tensor(0.0130) tensor(0) tensor(385) blood which
+81 tensor(0.0130) tensor(1) tensor(474) diseases available
+82 tensor(0.0130) tensor(2) tensor(183) that they
+83 tensor(0.0129) tensor(0) tensor(147) blood penicillin
+84 tensor(0.0129) tensor(0) tensor(302) blood rash
+85 tensor(0.0128) tensor(1) tensor(198) diseases and
+86 tensor(0.0128) tensor(2) tensor(93) that that
+87 tensor(0.0128) tensor(0) tensor(150) blood effective
+88 tensor(0.0128) tensor(1) tensor(497) diseases penicillin
+89 tensor(0.0128) tensor(0) tensor(461) blood bcg
+90 tensor(0.0128) tensor(1) tensor(150) diseases effective
+91 tensor(0.0127) tensor(0) tensor(346) blood fungal
+92 tensor(0.0126) tensor(1) tensor(453) diseases rash
+93 tensor(0.0126) tensor(1) tensor(274) diseases not
+94 tensor(0.0126) tensor(0) tensor(111) blood penicillin
+95 tensor(0.0126) tensor(2) tensor(140) that staphylococci
+96 tensor(0.0125) tensor(0) tensor(386) blood causes
+97 tensor(0.0125) tensor(1) tensor(168) diseases bacteria
+98 tensor(0.0125) tensor(1) tensor(51) diseases ten
+99 tensor(0.0125) tensor(2) tensor(51) that ten
+100 tensor(0.0124) tensor(1) tensor(461) diseases bcg
+101 tensor(0.0124) tensor(1) tensor(301) diseases bleeding
+102 tensor(0.0124) tensor(1) tensor(275) diseases available
+103 tensor(0.0124) tensor(0) tensor(113) blood been
+104 tensor(0.0124) tensor(0) tensor(169) blood penicillin
+105 tensor(0.0124) tensor(2) tensor(304) that reactions
+106 tensor(0.0124) tensor(2) tensor(213) that serious
+107 tensor(0.0124) tensor(1) tensor(454) diseases penicillin
+108 tensor(0.0123) tensor(1) tensor(455) diseases antibiotics
+109 tensor(0.0123) tensor(2) tensor(113) that been
+110 tensor(0.0123) tensor(2) tensor(169) that penicillin
+111 tensor(0.0122) tensor(1) tensor(339) diseases but
+112 tensor(0.0122) tensor(2) tensor(170) that antibiotics
+113 tensor(0.0122) tensor(2) tensor(184) that are
+114 tensor(0.0122) tensor(1) tensor(394) diseases pseudomembranous
+115 tensor(0.0122) tensor(0) tensor(345) blood oral
+116 tensor(0.0122) tensor(1) tensor(78) diseases world
+117 tensor(0.0122) tensor(1) tensor(112) diseases have
+118 tensor(0.0122) tensor(2) tensor(202) that are
+119 tensor(0.0122) tensor(1) tensor(334) diseases be
+120 tensor(0.0122) tensor(0) tensor(331) blood or
+121 tensor(0.0122) tensor(0) tensor(183) blood they
+122 tensor(0.0122) tensor(0) tensor(301) blood bleeding
+123 tensor(0.0122) tensor(1) tensor(171) diseases are
+124 tensor(0.0121) tensor(2) tensor(198) that and
+125 tensor(0.0121) tensor(0) tensor(112) blood have
+126 tensor(0.0121) tensor(1) tensor(111) diseases penicillin
+127 tensor(0.0121) tensor(0) tensor(215) blood what
+128 tensor(0.0120) tensor(1) tensor(307) diseases are
+129 tensor(0.0120) tensor(0) tensor(460) blood of
+130 tensor(0.0120) tensor(0) tensor(101) blood are
+131 tensor(0.0119) tensor(0) tensor(332) blood may
+132 tensor(0.0118) tensor(1) tensor(386) diseases causes
+133 tensor(0.0118) tensor(1) tensor(449) diseases the
+134 tensor(0.0118) tensor(1) tensor(329) diseases cefzil
+135 tensor(0.0118) tensor(1) tensor(135) diseases clostridium
+136 tensor(0.0118) tensor(0) tensor(453) blood rash
+137 tensor(0.0118) tensor(1) tensor(194) diseases stomach
+138 tensor(0.0118) tensor(1) tensor(52) diseases years
+139 tensor(0.0117) tensor(1) tensor(101) diseases are
+140 tensor(0.0117) tensor(0) tensor(333) blood not
+141 tensor(0.0117) tensor(0) tensor(334) blood be
+142 tensor(0.0117) tensor(2) tensor(215) that what
+143 tensor(0.0117) tensor(1) tensor(471) diseases penicillin
+144 tensor(0.0117) tensor(0) tensor(170) blood antibiotics
+145 tensor(0.0116) tensor(0) tensor(462) blood live
+146 tensor(0.0116) tensor(0) tensor(65) blood mice
+147 tensor(0.0116) tensor(2) tensor(313) that of
+148 tensor(0.0116) tensor(0) tensor(455) blood antibiotics
+149 tensor(0.0116) tensor(1) tensor(300) diseases bruising
+150 tensor(0.0116) tensor(2) tensor(345) that oral
+151 tensor(0.0116) tensor(0) tensor(463) blood vaccine
+152 tensor(0.0115) tensor(3) tensor(200) are they
+153 tensor(0.0115) tensor(1) tensor(337) diseases penicillins
+154 tensor(0.0115) tensor(1) tensor(464) diseases and
+155 tensor(0.0115) tensor(1) tensor(328) diseases cefprozil
+156 tensor(0.0115) tensor(1) tensor(302) diseases rash
+157 tensor(0.0115) tensor(1) tensor(84) diseases antibiotics
+158 tensor(0.0115) tensor(2) tensor(142) that are
+159 tensor(0.0114) tensor(0) tensor(64) blood laboratory
+160 tensor(0.0114) tensor(1) tensor(344) diseases problems
+161 tensor(0.0114) tensor(3) tensor(315) are which
+162 tensor(0.0114) tensor(0) tensor(141) blood now
+163 tensor(0.0114) tensor(1) tensor(462) diseases live
+164 tensor(0.0114) tensor(3) tensor(314) are antibiotics
+165 tensor(0.0114) tensor(1) tensor(195) diseases and
+166 tensor(0.0114) tensor(1) tensor(476) diseases antibiotics
+167 tensor(0.0114) tensor(1) tensor(460) diseases of
+168 tensor(0.0114) tensor(1) tensor(456) diseases may
+169 tensor(0.0114) tensor(0) tensor(454) blood penicillin
+170 tensor(0.0113) tensor(0) tensor(347) blood infections
+171 tensor(0.0113) tensor(2) tensor(149) that are
+172 tensor(0.0113) tensor(2) tensor(330) that may
+173 tensor(0.0113) tensor(2) tensor(52) that years
+174 tensor(0.0113) tensor(1) tensor(110) diseases of
+175 tensor(0.0113) tensor(0) tensor(202) blood are
+176 tensor(0.0113) tensor(0) tensor(339) blood but
+177 tensor(0.0113) tensor(1) tensor(374) diseases colon
+178 tensor(0.0112) tensor(0) tensor(148) blood antibiotics
+179 tensor(0.0112) tensor(0) tensor(184) blood are
+180 tensor(0.0112) tensor(2) tensor(331) that or
+181 tensor(0.0112) tensor(2) tensor(212) that andother
+182 tensor(0.0112) tensor(1) tensor(82) diseases are
+183 tensor(0.0112) tensor(1) tensor(475) diseases penicillin
+184 tensor(0.0112) tensor(1) tensor(50) diseases penicillin
+185 tensor(0.0111) tensor(1) tensor(459) diseases effect
+186 tensor(0.0111) tensor(2) tensor(181) that susceptible
+187 tensor(0.0111) tensor(1) tensor(348) diseases severe
+188 tensor(0.0111) tensor(1) tensor(211) diseases endocarditis
+189 tensor(0.0111) tensor(1) tensor(498) diseases antibiotics
+190 tensor(0.0111) tensor(1) tensor(147) diseases penicillin
+191 tensor(0.0111) tensor(0) tensor(110) blood of
+192 tensor(0.0111) tensor(2) tensor(111) that penicillin
+193 tensor(0.0111) tensor(1) tensor(338) diseases serious
+194 tensor(0.0111) tensor(1) tensor(393) diseases or
+195 tensor(0.0111) tensor(2) tensor(112) that have
+196 tensor(0.0111) tensor(0) tensor(395) blood colitis
+197 tensor(0.0110) tensor(0) tensor(330) blood may
+198 tensor(0.0110) tensor(0) tensor(89) blood to
+199 tensor(0.0110) tensor(0) tensor(423) blood causes
+0 tensor(1.7401, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(387, device='cuda:0') diseases inflammation
+1 tensor(1.6574, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(317, device='cuda:0') that related
+2 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(499, device='cuda:0') are are
+3 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(486, device='cuda:0') are are
+4 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(477, device='cuda:0') are are
+5 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(473, device='cuda:0') are are
+6 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(316, device='cuda:0') are are
+7 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(307, device='cuda:0') are are
+8 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(277, device='cuda:0') are are
+9 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(239, device='cuda:0') are are
+10 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(216, device='cuda:0') are are
+11 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(202, device='cuda:0') are are
+12 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(184, device='cuda:0') are are
+13 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(171, device='cuda:0') are are
+14 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(149, device='cuda:0') are are
+15 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(142, device='cuda:0') are are
+16 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(101, device='cuda:0') are are
+17 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(94, device='cuda:0') are are
+18 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(86, device='cuda:0') are are
+19 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(82, device='cuda:0') are are
+20 tensor(1.5762, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(115, device='cuda:0') that that
+21 tensor(1.5762, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(93, device='cuda:0') that that
+22 tensor(1.5762, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(32, device='cuda:0') that that
+23 tensor(1.4632, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(348, device='cuda:0') diseases severe
+24 tensor(1.4597, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(209, device='cuda:0') transmitted gonorrhea
+25 tensor(1.4583, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(349, device='cuda:0') diseases allergic
+26 tensor(1.4583, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(335, device='cuda:0') diseases allergic
+27 tensor(1.4583, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(308, device='cuda:0') diseases allergic
+28 tensor(1.3802, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(340, device='cuda:0') diseases rare
+29 tensor(1.3077, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(153, device='cuda:0') that e
+30 tensor(1.2871, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(368, device='cuda:0') that alter
+31 tensor(1.2692, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(401, device='cuda:0') diseases colitis
+32 tensor(1.2692, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(395, device='cuda:0') diseases colitis
+33 tensor(1.2692, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(392, device='cuda:0') diseases colitis
+34 tensor(1.2188, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(450, device='cuda:0') diseases incidence
+35 tensor(1.2142, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(114, device='cuda:0') that developed
+36 tensor(1.1807, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(209, device='cuda:0') diseases gonorrhea
+37 tensor(1.1788, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(129, device='cuda:0') that including
+38 tensor(1.1182, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(317, device='cuda:0') diseases related
+39 tensor(1.0948, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(301, device='cuda:0') that bleeding
+40 tensor(1.0849, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(387, device='cuda:0') transmitted inflammation
+41 tensor(1.0626, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(448, device='cuda:0') diseases increase
+42 tensor(1.0626, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(425, device='cuda:0') diseases increase
+43 tensor(1.0597, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(196, device='cuda:0') diseases intestines
+44 tensor(1.0504, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(65, device='cuda:0') diseases mice
+45 tensor(1.0257, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(128, device='cuda:0') that active
+46 tensor(1.0239, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(317, device='cuda:0') sexually related
+47 tensor(1.0220, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(350, device='cuda:0') diseases reactions
+48 tensor(1.0220, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(341, device='cuda:0') diseases reactions
+49 tensor(1.0220, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(304, device='cuda:0') diseases reactions
+50 tensor(1.0103, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(348, device='cuda:0') transmitted severe
+51 tensor(1.0067, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(53, device='cuda:0') that later
+52 tensor(1.0050, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(507, device='cuda:0') diseases small
+53 tensor(0.9978, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(457, device='cuda:0') that reduce
+54 tensor(0.9920, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(322, device='cuda:0') that example
+55 tensor(0.9834, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(292, device='cuda:0') diseases insomnia
+56 tensor(0.9833, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(196, device='cuda:0') transmitted intestines
+57 tensor(0.9822, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(396, device='cuda:0') diseases signs
+58 tensor(0.9821, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(398, device='cuda:0') diseases symptoms
+59 tensor(0.9655, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(39, device='cuda:0') diseases inhibited
+60 tensor(0.9650, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(381, device='cuda:0') diseases such
+61 tensor(0.9398, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(356, device='cuda:0') diseases thrombocytopenia
+62 tensor(0.9352, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(456, device='cuda:0') diseases may
+63 tensor(0.9352, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(332, device='cuda:0') diseases may
+64 tensor(0.9352, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(330, device='cuda:0') diseases may
+65 tensor(0.9324, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(209, device='cuda:0') sexually gonorrhea
+66 tensor(0.9311, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(211, device='cuda:0') diseases endocarditis
+67 tensor(0.9257, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(203, device='cuda:0') diseases used
+68 tensor(0.9257, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(185, device='cuda:0') diseases used
+69 tensor(0.9257, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(172, device='cuda:0') diseases used
+70 tensor(0.9257, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(88, device='cuda:0') diseases used
+71 tensor(0.9198, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(396, device='cuda:0') transmitted signs
+72 tensor(0.9037, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(346, device='cuda:0') diseases fungal
+73 tensor(0.9015, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(439, device='cuda:0') that by
+74 tensor(0.9015, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(434, device='cuda:0') that by
+75 tensor(0.9015, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(180, device='cuda:0') that by
+76 tensor(0.8967, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(68, device='cuda:0') that hailed
+77 tensor(0.8949, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(39, device='cuda:0') that inhibited
+78 tensor(0.8915, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(340, device='cuda:0') transmitted rare
+79 tensor(0.8891, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(65, device='cuda:0') transmitted mice
+80 tensor(0.8868, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(300, device='cuda:0') diseases bruising
+81 tensor(0.8855, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(131, device='cuda:0') diseases pneumoniae
+82 tensor(0.8848, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(156, device='cuda:0') that certain
+83 tensor(0.8771, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(103, device='cuda:0') that uses
+84 tensor(0.8740, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(64, device='cuda:0') diseases laboratory
+85 tensor(0.8722, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(403, device='cuda:0') diseases fever
+86 tensor(0.8705, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(506, device='cuda:0') that although
+87 tensor(0.8624, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(448, device='cuda:0') that increase
+88 tensor(0.8624, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(425, device='cuda:0') that increase
+89 tensor(0.8533, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(217, device='cuda:0') that examples
+90 tensor(0.8520, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(91, device='cuda:0') diseases bacterial
+91 tensor(0.8517, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(138, device='cuda:0') that however
+92 tensor(0.8473, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(349, device='cuda:0') that allergic
+93 tensor(0.8473, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(335, device='cuda:0') that allergic
+94 tensor(0.8473, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(308, device='cuda:0') that allergic
+95 tensor(0.8448, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(300, device='cuda:0') that bruising
+96 tensor(0.8391, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(295, device='cuda:0') that vomiting
+97 tensor(0.8327, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(467, device='cuda:0') that vaccine
+98 tensor(0.8327, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(463, device='cuda:0') that vaccine
+99 tensor(0.8231, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(343, device='cuda:0') diseases kidney
+cross mean= tensor(0.1565, device='cuda:0', grad_fn=<MeanBackward0>)
+cross var= tensor(0.1043, device='cuda:0', grad_fn=<VarBackward0>)
+cross max= tensor(1.7401, device='cuda:0', grad_fn=<SelectBackward>) tensor(897, device='cuda:0')
+cross max2= tensor(1.6574, device='cuda:0', grad_fn=<SelectBackward>) tensor(1337, device='cuda:0')
+cross min= tensor(-1.2638, device='cuda:0', grad_fn=<SelectBackward>) tensor(1153, device='cuda:0')
+cross min2= tensor(-1.2263, device='cuda:0', grad_fn=<SelectBackward>) tensor(1186, device='cuda:0')

@@ -1,0 +1,317 @@
+vocab read
+term of 0 index =  <PAD>
+../save_match_pyramid_ms/result_cam.pt50
+tensor([[111320, 171750, 430974,  90453, 396128, 440770]], device='cuda:0')
+tensor([24.8185], device='cuda:0', requires_grad=True)
+torch.Size([6, 104])
+torch.Size([1, 1, 6, 104])
+cam mean= tensor(0.0428)
+cam var= tensor(0.0008)
+query =  ['blood', 'diseases', 'that', 'are', 'sexually', 'transmitted']
+doc =  ['sexually', 'transmitted', 'and', 'blood', 'borne', 'infections', 'a', 'sexually', 'transmitted', 'infection', 'sti', 'is', 'an', 'infection', 'that', 'can', 'be', 'transmitted', 'from', 'one', 'person', 'to', 'another', 'through', 'sexual', 'contact', 'exchange', 'of', 'semen', 'vaginal', 'fluid', 'blood', 'or', 'other', 'fluids', 'a', 'blood', 'borne', 'infection', 'is', 'transmitted', 'through', 'contact', 'with', 'infected', 'blood', 'blood', 'borne', 'infections', 'are', 'transmitted', 'by', 'contact', 'with', 'contaminated', 'blood', 'some', 'infections', 'for', 'example', 'hiv', 'hepatitis', 'b', 'and', 'hepatitis', 'c', 'may', 'be', 'transmitted', 'through', 'both', 'sexual', 'and', 'blood', 'borne', 'transmission', 'routes', 'overview', 'sexual', 'health', 'program', 'risk', 'factors', 'prevention', 'testing', 'for', 'chlamydia', 'testing', 'for', 'syphilis', 'and', 'chlamydia', 'genital', 'herpes', 'genital', 'warts', 'condyloma', 'acuminata', 'gonorrhea', 'hepatitis', 'bhepatitis', 'papillomavirus', 'hpv', 'syphilis']
+0 tensor(0.1519) tensor(1) tensor(48) diseases infections
+1 tensor(0.1407) tensor(1) tensor(47) diseases borne
+2 tensor(0.1256) tensor(0) tensor(48) blood infections
+3 tensor(0.1226) tensor(1) tensor(5) diseases infections
+4 tensor(0.1212) tensor(2) tensor(48) that infections
+5 tensor(0.1207) tensor(1) tensor(49) diseases are
+6 tensor(0.1196) tensor(1) tensor(38) diseases infection
+7 tensor(0.1192) tensor(0) tensor(47) blood borne
+8 tensor(0.1184) tensor(1) tensor(6) diseases a
+9 tensor(0.1180) tensor(2) tensor(5) that infections
+10 tensor(0.1173) tensor(1) tensor(66) diseases may
+11 tensor(0.1111) tensor(2) tensor(47) that borne
+12 tensor(0.1111) tensor(3) tensor(5) are infections
+13 tensor(0.1106) tensor(2) tensor(6) that a
+14 tensor(0.1053) tensor(3) tensor(48) are infections
+15 tensor(0.1041) tensor(1) tensor(67) diseases be
+16 tensor(0.1037) tensor(1) tensor(46) diseases blood
+17 tensor(0.1032) tensor(0) tensor(38) blood infection
+18 tensor(0.1026) tensor(0) tensor(6) blood a
+19 tensor(0.1011) tensor(0) tensor(66) blood may
+20 tensor(0.1007) tensor(1) tensor(4) diseases borne
+21 tensor(0.1004) tensor(3) tensor(6) are a
+22 tensor(0.0998) tensor(2) tensor(38) that infection
+23 tensor(0.0993) tensor(1) tensor(15) diseases can
+24 tensor(0.0991) tensor(1) tensor(65) diseases c
+25 tensor(0.0991) tensor(2) tensor(49) that are
+26 tensor(0.0987) tensor(3) tensor(47) are borne
+27 tensor(0.0985) tensor(1) tensor(0) diseases sexually
+28 tensor(0.0975) tensor(2) tensor(4) that borne
+29 tensor(0.0968) tensor(0) tensor(49) blood are
+30 tensor(0.0967) tensor(1) tensor(14) diseases that
+31 tensor(0.0959) tensor(4) tensor(6) sexually a
+32 tensor(0.0953) tensor(1) tensor(39) diseases is
+33 tensor(0.0944) tensor(3) tensor(4) are borne
+34 tensor(0.0942) tensor(2) tensor(66) that may
+35 tensor(0.0934) tensor(2) tensor(14) that that
+36 tensor(0.0929) tensor(3) tensor(0) are sexually
+37 tensor(0.0920) tensor(1) tensor(7) diseases sexually
+38 tensor(0.0920) tensor(4) tensor(5) sexually infections
+39 tensor(0.0919) tensor(0) tensor(0) blood sexually
+40 tensor(0.0918) tensor(2) tensor(15) that can
+41 tensor(0.0909) tensor(0) tensor(5) blood infections
+42 tensor(0.0901) tensor(3) tensor(66) are may
+43 tensor(0.0898) tensor(1) tensor(68) diseases transmitted
+44 tensor(0.0896) tensor(1) tensor(37) diseases borne
+45 tensor(0.0894) tensor(0) tensor(14) blood that
+46 tensor(0.0893) tensor(2) tensor(67) that be
+47 tensor(0.0886) tensor(2) tensor(0) that sexually
+48 tensor(0.0876) tensor(0) tensor(67) blood be
+49 tensor(0.0872) tensor(3) tensor(49) are are
+50 tensor(0.0870) tensor(0) tensor(46) blood blood
+51 tensor(0.0864) tensor(1) tensor(40) diseases transmitted
+52 tensor(0.0861) tensor(0) tensor(15) blood can
+53 tensor(0.0852) tensor(2) tensor(46) that blood
+54 tensor(0.0851) tensor(4) tensor(0) sexually sexually
+55 tensor(0.0850) tensor(3) tensor(38) are infection
+56 tensor(0.0849) tensor(1) tensor(16) diseases be
+57 tensor(0.0848) tensor(4) tensor(48) sexually infections
+58 tensor(0.0846) tensor(3) tensor(15) are can
+59 tensor(0.0845) tensor(0) tensor(7) blood sexually
+60 tensor(0.0844) tensor(3) tensor(67) are be
+61 tensor(0.0842) tensor(2) tensor(65) that c
+62 tensor(0.0841) tensor(2) tensor(13) that infection
+63 tensor(0.0836) tensor(2) tensor(7) that sexually
+64 tensor(0.0833) tensor(4) tensor(7) sexually sexually
+65 tensor(0.0833) tensor(4) tensor(66) sexually may
+66 tensor(0.0829) tensor(1) tensor(50) diseases transmitted
+67 tensor(0.0818) tensor(2) tensor(39) that is
+68 tensor(0.0816) tensor(3) tensor(65) are c
+69 tensor(0.0814) tensor(4) tensor(38) sexually infection
+70 tensor(0.0809) tensor(0) tensor(68) blood transmitted
+71 tensor(0.0808) tensor(1) tensor(13) diseases infection
+72 tensor(0.0803) tensor(1) tensor(1) diseases transmitted
+73 tensor(0.0799) tensor(2) tensor(68) that transmitted
+74 tensor(0.0798) tensor(0) tensor(39) blood is
+75 tensor(0.0798) tensor(0) tensor(65) blood c
+76 tensor(0.0789) tensor(3) tensor(7) are sexually
+77 tensor(0.0787) tensor(4) tensor(67) sexually be
+78 tensor(0.0787) tensor(0) tensor(13) blood infection
+79 tensor(0.0774) tensor(3) tensor(14) are that
+80 tensor(0.0773) tensor(1) tensor(64) diseases hepatitis
+81 tensor(0.0765) tensor(3) tensor(16) are be
+82 tensor(0.0764) tensor(4) tensor(15) sexually can
+83 tensor(0.0763) tensor(2) tensor(40) that transmitted
+84 tensor(0.0763) tensor(0) tensor(1) blood transmitted
+85 tensor(0.0757) tensor(0) tensor(37) blood borne
+86 tensor(0.0751) tensor(0) tensor(40) blood transmitted
+87 tensor(0.0740) tensor(0) tensor(16) blood be
+88 tensor(0.0739) tensor(2) tensor(37) that borne
+89 tensor(0.0735) tensor(2) tensor(50) that transmitted
+90 tensor(0.0732) tensor(0) tensor(4) blood borne
+91 tensor(0.0728) tensor(1) tensor(42) diseases contact
+92 tensor(0.0724) tensor(3) tensor(46) are blood
+93 tensor(0.0719) tensor(4) tensor(16) sexually be
+94 tensor(0.0719) tensor(4) tensor(40) sexually transmitted
+95 tensor(0.0717) tensor(0) tensor(50) blood transmitted
+96 tensor(0.0717) tensor(3) tensor(39) are is
+97 tensor(0.0714) tensor(4) tensor(4) sexually borne
+98 tensor(0.0714) tensor(2) tensor(16) that be
+99 tensor(0.0710) tensor(1) tensor(45) diseases blood
+100 tensor(0.0709) tensor(3) tensor(68) are transmitted
+101 tensor(0.0709) tensor(4) tensor(49) sexually are
+102 tensor(0.0704) tensor(1) tensor(3) diseases blood
+103 tensor(0.0699) tensor(1) tensor(69) diseases through
+104 tensor(0.0696) tensor(3) tensor(37) are borne
+105 tensor(0.0693) tensor(3) tensor(40) are transmitted
+106 tensor(0.0690) tensor(4) tensor(39) sexually is
+107 tensor(0.0688) tensor(2) tensor(64) that hepatitis
+108 tensor(0.0679) tensor(2) tensor(69) that through
+109 tensor(0.0678) tensor(1) tensor(96) diseases condyloma
+110 tensor(0.0677) tensor(4) tensor(68) sexually transmitted
+111 tensor(0.0676) tensor(0) tensor(12) blood an
+112 tensor(0.0671) tensor(1) tensor(36) diseases blood
+113 tensor(0.0665) tensor(2) tensor(24) that sexual
+114 tensor(0.0664) tensor(4) tensor(65) sexually c
+115 tensor(0.0664) tensor(3) tensor(1) are transmitted
+116 tensor(0.0662) tensor(3) tensor(64) are hepatitis
+117 tensor(0.0661) tensor(2) tensor(22) that another
+118 tensor(0.0658) tensor(0) tensor(8) blood transmitted
+119 tensor(0.0657) tensor(2) tensor(1) that transmitted
+120 tensor(0.0657) tensor(4) tensor(47) sexually borne
+121 tensor(0.0654) tensor(2) tensor(23) that through
+122 tensor(0.0653) tensor(5) tensor(48) transmitted infections
+123 tensor(0.0652) tensor(2) tensor(3) that blood
+124 tensor(0.0647) tensor(1) tensor(8) diseases transmitted
+125 tensor(0.0647) tensor(4) tensor(50) sexually transmitted
+126 tensor(0.0644) tensor(3) tensor(50) are transmitted
+127 tensor(0.0643) tensor(5) tensor(66) transmitted may
+128 tensor(0.0641) tensor(1) tensor(41) diseases through
+129 tensor(0.0638) tensor(0) tensor(64) blood hepatitis
+130 tensor(0.0636) tensor(1) tensor(44) diseases infected
+131 tensor(0.0635) tensor(1) tensor(97) diseases acuminata
+132 tensor(0.0628) tensor(0) tensor(42) blood contact
+133 tensor(0.0628) tensor(1) tensor(22) diseases another
+134 tensor(0.0623) tensor(1) tensor(23) diseases through
+135 tensor(0.0622) tensor(5) tensor(38) transmitted infection
+136 tensor(0.0616) tensor(4) tensor(1) sexually transmitted
+137 tensor(0.0616) tensor(1) tensor(43) diseases with
+138 tensor(0.0611) tensor(2) tensor(21) that to
+139 tensor(0.0607) tensor(0) tensor(45) blood blood
+140 tensor(0.0594) tensor(1) tensor(24) diseases sexual
+141 tensor(0.0592) tensor(1) tensor(12) diseases an
+142 tensor(0.0592) tensor(2) tensor(8) that transmitted
+143 tensor(0.0590) tensor(2) tensor(42) that contact
+144 tensor(0.0590) tensor(5) tensor(6) transmitted a
+145 tensor(0.0587) tensor(4) tensor(37) sexually borne
+146 tensor(0.0584) tensor(2) tensor(75) that transmission
+147 tensor(0.0584) tensor(0) tensor(69) blood through
+148 tensor(0.0583) tensor(1) tensor(70) diseases both
+149 tensor(0.0579) tensor(1) tensor(21) diseases to
+150 tensor(0.0576) tensor(2) tensor(20) that person
+151 tensor(0.0567) tensor(2) tensor(70) that both
+152 tensor(0.0566) tensor(2) tensor(41) that through
+153 tensor(0.0565) tensor(0) tensor(24) blood sexual
+154 tensor(0.0564) tensor(4) tensor(64) sexually hepatitis
+155 tensor(0.0563) tensor(0) tensor(41) blood through
+156 tensor(0.0561) tensor(2) tensor(76) that routes
+157 tensor(0.0560) tensor(4) tensor(14) sexually that
+158 tensor(0.0559) tensor(0) tensor(44) blood infected
+159 tensor(0.0558) tensor(2) tensor(25) that contact
+160 tensor(0.0556) tensor(1) tensor(25) diseases contact
+161 tensor(0.0550) tensor(1) tensor(71) diseases sexual
+162 tensor(0.0547) tensor(0) tensor(36) blood blood
+163 tensor(0.0547) tensor(3) tensor(3) are blood
+164 tensor(0.0544) tensor(2) tensor(36) that blood
+165 tensor(0.0544) tensor(2) tensor(96) that condyloma
+166 tensor(0.0544) tensor(1) tensor(2) diseases and
+167 tensor(0.0541) tensor(1) tensor(51) diseases by
+168 tensor(0.0540) tensor(0) tensor(70) blood both
+169 tensor(0.0540) tensor(0) tensor(23) blood through
+170 tensor(0.0540) tensor(2) tensor(12) that an
+171 tensor(0.0539) tensor(1) tensor(63) diseases and
+172 tensor(0.0537) tensor(5) tensor(15) transmitted can
+173 tensor(0.0536) tensor(3) tensor(96) are condyloma
+174 tensor(0.0535) tensor(5) tensor(67) transmitted be
+175 tensor(0.0535) tensor(0) tensor(43) blood with
+176 tensor(0.0534) tensor(2) tensor(71) that sexual
+177 tensor(0.0533) tensor(5) tensor(5) transmitted infections
+178 tensor(0.0533) tensor(0) tensor(3) blood blood
+179 tensor(0.0531) tensor(4) tensor(46) sexually blood
+180 tensor(0.0528) tensor(1) tensor(61) diseases hepatitis
+181 tensor(0.0526) tensor(5) tensor(0) transmitted sexually
+182 tensor(0.0526) tensor(0) tensor(11) blood is
+183 tensor(0.0524) tensor(0) tensor(71) blood sexual
+184 tensor(0.0523) tensor(2) tensor(45) that blood
+185 tensor(0.0522) tensor(0) tensor(97) blood acuminata
+186 tensor(0.0522) tensor(5) tensor(65) transmitted c
+187 tensor(0.0521) tensor(1) tensor(75) diseases transmission
+188 tensor(0.0519) tensor(1) tensor(55) diseases blood
+189 tensor(0.0519) tensor(4) tensor(8) sexually transmitted
+190 tensor(0.0517) tensor(0) tensor(96) blood condyloma
+191 tensor(0.0517) tensor(3) tensor(97) are acuminata
+192 tensor(0.0516) tensor(0) tensor(10) blood sti
+193 tensor(0.0516) tensor(0) tensor(2) blood and
+194 tensor(0.0513) tensor(5) tensor(47) transmitted borne
+195 tensor(0.0513) tensor(0) tensor(25) blood contact
+196 tensor(0.0511) tensor(1) tensor(20) diseases person
+197 tensor(0.0511) tensor(0) tensor(22) blood another
+198 tensor(0.0510) tensor(3) tensor(13) are infection
+199 tensor(0.0510) tensor(5) tensor(40) transmitted transmitted
+0 tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(17, device='cuda:0') transmitted transmitted
+1 tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(50, device='cuda:0') transmitted transmitted
+2 tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(68, device='cuda:0') transmitted transmitted
+3 tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(8, device='cuda:0') transmitted transmitted
+4 tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(40, device='cuda:0') transmitted transmitted
+5 tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(1, device='cuda:0') transmitted transmitted
+6 tensor(2.2289, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(7, device='cuda:0') sexually sexually
+7 tensor(2.2289, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(0, device='cuda:0') sexually sexually
+8 tensor(1.9780, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(83, device='cuda:0') diseases prevention
+9 tensor(1.9278, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(8, device='cuda:0') diseases transmitted
+10 tensor(1.9278, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(68, device='cuda:0') diseases transmitted
+11 tensor(1.9278, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(40, device='cuda:0') diseases transmitted
+12 tensor(1.9278, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(1, device='cuda:0') diseases transmitted
+13 tensor(1.9278, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(50, device='cuda:0') diseases transmitted
+14 tensor(1.9278, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(17, device='cuda:0') diseases transmitted
+15 tensor(1.6398, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(49, device='cuda:0') are are
+16 tensor(1.5762, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(14, device='cuda:0') that that
+17 tensor(1.4597, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(98, device='cuda:0') transmitted gonorrhea
+18 tensor(1.4327, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(44, device='cuda:0') transmitted infected
+19 tensor(1.4226, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(44, device='cuda:0') diseases infected
+20 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(68, device='cuda:0') sexually transmitted
+21 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(40, device='cuda:0') sexually transmitted
+22 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(17, device='cuda:0') sexually transmitted
+23 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(8, device='cuda:0') sexually transmitted
+24 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(0, device='cuda:0') transmitted sexually
+25 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(7, device='cuda:0') transmitted sexually
+26 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(50, device='cuda:0') sexually transmitted
+27 tensor(1.2111, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(1, device='cuda:0') sexually transmitted
+28 tensor(1.2047, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(83, device='cuda:0') that prevention
+29 tensor(1.1807, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(98, device='cuda:0') diseases gonorrhea
+30 tensor(1.1247, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(83, device='cuda:0') transmitted prevention
+31 tensor(1.0998, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(24, device='cuda:0') sexually sexual
+32 tensor(1.0998, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(78, device='cuda:0') sexually sexual
+33 tensor(1.0998, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(71, device='cuda:0') sexually sexual
+34 tensor(1.0441, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(83, device='cuda:0') sexually prevention
+35 tensor(0.9920, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(59, device='cuda:0') that example
+36 tensor(0.9352, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(66, device='cuda:0') diseases may
+37 tensor(0.9324, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(98, device='cuda:0') sexually gonorrhea
+38 tensor(0.9015, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(51, device='cuda:0') that by
+39 tensor(0.8340, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(69, device='cuda:0') transmitted through
+40 tensor(0.8340, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(41, device='cuda:0') transmitted through
+41 tensor(0.8340, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(23, device='cuda:0') transmitted through
+42 tensor(0.7976, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(44, device='cuda:0') sexually infected
+43 tensor(0.7936, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(89, device='cuda:0') diseases syphilis
+44 tensor(0.7936, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(103, device='cuda:0') diseases syphilis
+45 tensor(0.7920, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(33, device='cuda:0') diseases other
+46 tensor(0.7814, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(66, device='cuda:0') transmitted may
+47 tensor(0.7801, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(89, device='cuda:0') transmitted syphilis
+48 tensor(0.7801, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(103, device='cuda:0') transmitted syphilis
+49 tensor(0.7791, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(48, device='cuda:0') diseases infections
+50 tensor(0.7791, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(5, device='cuda:0') diseases infections
+51 tensor(0.7791, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(57, device='cuda:0') diseases infections
+52 tensor(0.7664, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(69, device='cuda:0') that through
+53 tensor(0.7664, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(41, device='cuda:0') that through
+54 tensor(0.7664, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(23, device='cuda:0') that through
+55 tensor(0.7632, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(54, device='cuda:0') transmitted contaminated
+56 tensor(0.7484, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(82, device='cuda:0') diseases factors
+57 tensor(0.7292, device='cuda:0', grad_fn=<SelectBackward>) tensor(3, device='cuda:0') tensor(83, device='cuda:0') are prevention
+58 tensor(0.7234, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(81, device='cuda:0') diseases risk
+59 tensor(0.7206, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(7, device='cuda:0') diseases sexually
+60 tensor(0.7206, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(0, device='cuda:0') diseases sexually
+61 tensor(0.7190, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(93, device='cuda:0') diseases herpes
+62 tensor(0.7170, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(54, device='cuda:0') diseases contaminated
+63 tensor(0.7145, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(28, device='cuda:0') diseases semen
+64 tensor(0.7129, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(48, device='cuda:0') transmitted infections
+65 tensor(0.7129, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(57, device='cuda:0') transmitted infections
+66 tensor(0.7129, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(5, device='cuda:0') transmitted infections
+67 tensor(0.7038, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(79, device='cuda:0') diseases health
+68 tensor(0.6811, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(51, device='cuda:0') diseases by
+69 tensor(0.6775, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(47, device='cuda:0') diseases borne
+70 tensor(0.6775, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(74, device='cuda:0') diseases borne
+71 tensor(0.6775, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(37, device='cuda:0') diseases borne
+72 tensor(0.6775, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(4, device='cuda:0') diseases borne
+73 tensor(0.6771, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(28, device='cuda:0') that semen
+74 tensor(0.6659, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(90, device='cuda:0') that and
+75 tensor(0.6659, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(72, device='cuda:0') that and
+76 tensor(0.6659, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(63, device='cuda:0') that and
+77 tensor(0.6659, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(2, device='cuda:0') that and
+78 tensor(0.6630, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(23, device='cuda:0') diseases through
+79 tensor(0.6630, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(69, device='cuda:0') diseases through
+80 tensor(0.6630, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(41, device='cuda:0') diseases through
+81 tensor(0.6546, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(75, device='cuda:0') transmitted transmission
+82 tensor(0.6428, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(93, device='cuda:0') transmitted herpes
+83 tensor(0.6378, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(34, device='cuda:0') diseases fluids
+84 tensor(0.6333, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(52, device='cuda:0') sexually contact
+85 tensor(0.6333, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(42, device='cuda:0') sexually contact
+86 tensor(0.6333, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(25, device='cuda:0') sexually contact
+87 tensor(0.6327, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(52, device='cuda:0') that contact
+88 tensor(0.6327, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(25, device='cuda:0') that contact
+89 tensor(0.6327, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(42, device='cuda:0') that contact
+90 tensor(0.6316, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(48, device='cuda:0') that infections
+91 tensor(0.6316, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(57, device='cuda:0') that infections
+92 tensor(0.6316, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(5, device='cuda:0') that infections
+93 tensor(0.6255, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(28, device='cuda:0') transmitted semen
+94 tensor(0.6204, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(66, device='cuda:0') sexually may
+95 tensor(0.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(1, device='cuda:0') tensor(59, device='cuda:0') diseases example
+96 tensor(0.6025, device='cuda:0', grad_fn=<SelectBackward>) tensor(4, device='cuda:0') tensor(59, device='cuda:0') sexually example
+97 tensor(0.5895, device='cuda:0', grad_fn=<SelectBackward>) tensor(2, device='cuda:0') tensor(66, device='cuda:0') that may
+98 tensor(0.5853, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(25, device='cuda:0') transmitted contact
+99 tensor(0.5853, device='cuda:0', grad_fn=<SelectBackward>) tensor(5, device='cuda:0') tensor(52, device='cuda:0') transmitted contact
+cross mean= tensor(0.3041, device='cuda:0', grad_fn=<MeanBackward0>)
+cross var= tensor(0.2012, device='cuda:0', grad_fn=<VarBackward0>)
+cross max= tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(537, device='cuda:0')
+cross max2= tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(570, device='cuda:0')
+cross min= tensor(-0.5623, device='cuda:0', grad_fn=<SelectBackward>) tensor(310, device='cuda:0')
+cross min2= tensor(-0.4842, device='cuda:0', grad_fn=<SelectBackward>) tensor(289, device='cuda:0')
