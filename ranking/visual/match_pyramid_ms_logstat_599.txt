@@ -1,0 +1,15 @@
+../save_match_pyramid_ms/result_cam.pt599
+tensor([[430493, 134776, 420563, 345787, 322526]], device='cuda:0')
+tensor([10.7992], device='cuda:0', requires_grad=True)
+torch.Size([5, 69])
+torch.Size([1, 1, 5, 69])
+cam mean= tensor(0.0411)
+cam var= tensor(0.0019)
+query =  ['texas', 'child', 'support', 'phone', 'number']
+doc =  ['the', 'district', 'clerk', 's', 'office', 'has', 'personnel', 'that', 'can', 'provide', 'information', 'regarding', 'child', 'support', 'related', 'matters', 'clerks', 'phone', 'numbers', '956', '956', '956', 'to', 'apply', 'for', 'child', 'support', 'services', 'please', 'contact', 'the', 'local', 'field', 'office', 'at', 'office', 'of', 'the', 'attorney', 'general', 'child', 'support', 'division', '1401', 'calle', 'del', 'norte', 'suite', '6', 'laredo', 'texas', 'telephone', 'numbers', '956', 'fax', 'number', '956', 'or', 'you', 'can', 'also', 'visit', 'the', 'texas', 'attorney', 'general', 'website', 'at', 'https']
+cross mean= tensor(0.1533, device='cuda:0', grad_fn=<MeanBackward0>)
+cross var= tensor(0.1801, device='cuda:0', grad_fn=<VarBackward0>)
+cross max= tensor(2.8168, device='cuda:0', grad_fn=<SelectBackward>) tensor(94, device='cuda:0')
+cross max2= tensor(2.8168, device='cuda:0', grad_fn=<SelectBackward>) tensor(109, device='cuda:0')
+cross min= tensor(-0.4877, device='cuda:0', grad_fn=<SelectBackward>) tensor(21, device='cuda:0')
+cross min2= tensor(-0.4877, device='cuda:0', grad_fn=<SelectBackward>) tensor(19, device='cuda:0')

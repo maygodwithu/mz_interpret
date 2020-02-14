@@ -1,0 +1,15 @@
+../save_match_pyramid_ms/result_cam.pt50
+tensor([[111320, 171750, 430974,  90453, 396128, 440770]], device='cuda:0')
+tensor([24.8185], device='cuda:0', requires_grad=True)
+torch.Size([6, 104])
+torch.Size([1, 1, 6, 104])
+cam mean= tensor(0.0428)
+cam var= tensor(0.0008)
+query =  ['blood', 'diseases', 'that', 'are', 'sexually', 'transmitted']
+doc =  ['sexually', 'transmitted', 'and', 'blood', 'borne', 'infections', 'a', 'sexually', 'transmitted', 'infection', 'sti', 'is', 'an', 'infection', 'that', 'can', 'be', 'transmitted', 'from', 'one', 'person', 'to', 'another', 'through', 'sexual', 'contact', 'exchange', 'of', 'semen', 'vaginal', 'fluid', 'blood', 'or', 'other', 'fluids', 'a', 'blood', 'borne', 'infection', 'is', 'transmitted', 'through', 'contact', 'with', 'infected', 'blood', 'blood', 'borne', 'infections', 'are', 'transmitted', 'by', 'contact', 'with', 'contaminated', 'blood', 'some', 'infections', 'for', 'example', 'hiv', 'hepatitis', 'b', 'and', 'hepatitis', 'c', 'may', 'be', 'transmitted', 'through', 'both', 'sexual', 'and', 'blood', 'borne', 'transmission', 'routes', 'overview', 'sexual', 'health', 'program', 'risk', 'factors', 'prevention', 'testing', 'for', 'chlamydia', 'testing', 'for', 'syphilis', 'and', 'chlamydia', 'genital', 'herpes', 'genital', 'warts', 'condyloma', 'acuminata', 'gonorrhea', 'hepatitis', 'bhepatitis', 'papillomavirus', 'hpv', 'syphilis']
+cross mean= tensor(0.3041, device='cuda:0', grad_fn=<MeanBackward0>)
+cross var= tensor(0.2012, device='cuda:0', grad_fn=<VarBackward0>)
+cross max= tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(537, device='cuda:0')
+cross max2= tensor(2.6073, device='cuda:0', grad_fn=<SelectBackward>) tensor(570, device='cuda:0')
+cross min= tensor(-0.5623, device='cuda:0', grad_fn=<SelectBackward>) tensor(310, device='cuda:0')
+cross min2= tensor(-0.4842, device='cuda:0', grad_fn=<SelectBackward>) tensor(289, device='cuda:0')

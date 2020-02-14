@@ -2,6 +2,7 @@ import torch
 import seaborn as sns
 from matplotlib import pyplot as plt
 import numpy as np
+import sys
 
 def readVocab():
     vocab = []
@@ -18,7 +19,8 @@ def readVocab():
 
 if __name__ == '__main__':
     vocab = readVocab()
-    num = 59  # +51  -59
+    num = int(sys.argv[1])
+    #num = 59  # +51  -59
     num -= 1
     model = "match_pyramid_ms"
     #model = "snrm_ms"

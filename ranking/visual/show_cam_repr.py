@@ -1,30 +1,14 @@
 import torch
 import cv2
 import numpy as np
-import sys
 
 
 def show_cam_on_image(img, mask, imgname):
     heatmap = cv2.applyColorMap(np.uint8(255 * mask), cv2.COLORMAP_JET)
     heatmap = np.float32(heatmap) / 255
-    cam = heatmap + np.float32(img)
+    cam = heatmap #+ np.float32(img)
     cam = cam / np.max(cam)
     cv2.imwrite(imgname, np.uint8(255*cam))
-
-def preprocess_image(img):
-    means = [0.485, 0.456, 0.406]
-    stds = [0.229, 0.224, 0.225]
-
-    preprocessed_img = img.copy()[:, :, ::-1]
-    for i in range(3):
-        preprocessed_img[:, :, i] = preprocessed_img[:, :, i] - means[i]
-        preprocessed_img[:, :, i] = preprocessed_img[:, :, i] / stds[i]
-    preprocessed_img = \
-        np.ascontiguousarray(np.transpose(preprocessed_img, (2, 0, 1)))
-    preprocessed_img = torch.from_numpy(preprocessed_img)
-    preprocessed_img.unsqueeze_(0)
-    input = preprocessed_img.requires_grad_(False)
-    return input
 
 def readVocab():
     vocab = []
@@ -55,19 +39,22 @@ def print_topk_qd(tv, ti, vocab, topk, shape):
 
 if __name__ == '__main__':
     vocab = readVocab()
-    #num = 59  # +51  -59
-    num = int(sys.argv[1])  # +51  -59
+    num = 51  # +51  -59
     num -= 1
-    model = "match_pyramid_ms"
-    #model = "snrm_ms"
+    #model = "match_pyramid_ms"
+    model = "snrm_ms"
     fname = "../save_" + model + "/result_cam.pt" + str(num)
     res = torch.load(fname)
 
-    cam = res['cam']
+    qcam = res['qcam']
+    dcam = res['dcam']
+    print(qcam.shape)
+    print(dcam.shape)
     cross = res['embcross']
     text_left = res['text_left']
     text_right = res['text_right']
-
+    
+"""
     print(fname)
     print(res['text_left'])
     print(res['score'])
@@ -84,13 +71,13 @@ if __name__ == '__main__':
 
     print('query = ', make_sentence(res['text_left'].squeeze()))
     print('doc = ', make_sentence(res['text_right'].squeeze()))
-    #print_topk_qd(tv, ti, vocab, 200, cam.shape)
+    print_topk_qd(tv, ti, vocab, 200, cam.shape)
 
     ## cross
     tv, ti = torch.sort(cross.flatten())
     mean = torch.mean(cross)
     var = torch.var(cross)
-    #print_topk_qd(tv, ti, vocab, 100, cam.shape)
+    print_topk_qd(tv, ti, vocab, 100, cam.shape)
     print('cross mean=', mean)
     print('cross var=', var)
     print('cross max=', tv[-1], ti[-1])
@@ -106,13 +93,7 @@ if __name__ == '__main__':
     cam = cam - np.min(cam)
     cam = cam / np.max(cam)
 
-    imgname = model + "_join_" + str(num) + ".jpg"
-
-    heatname = model + "_heat_" + str(num) + ".jpg"
-    img = cv2.imread(heatname, cv2.IMREAD_COLOR)
-    img = np.float32(cv2.resize(img, (500, 200))) / 255
-    input = preprocess_image(img)
-
-    show_cam_on_image(img, cam, imgname)
-
+    imgname = model + "_cam_" + str(num) + ".jpg"
+    show_cam_on_image(None, cam, imgname)
+"""
 
