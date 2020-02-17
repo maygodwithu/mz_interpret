@@ -1,0 +1,10 @@
+score_mean= 2.9577996340935906
+score_std= 8.511598094908088
+interaction_mean= 0.11165669
+interaction_std= 0.11165669
+cam_mean=  nan
+cam_std=  nan
+corr_mean=  0.821430919701612
+corr_std=  0.25182115119973003
+spearman_corr_mean=  0.2319838978488567
+spearman_corr_std=  0.07926738810864235
