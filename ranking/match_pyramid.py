@@ -3,13 +3,15 @@
 
 # In[1]:
 
-
+import os
 import torch
 import numpy as np
 import pandas as pd
 import matchzoo as mz
 print('matchzoo version', mz.__version__)
 
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="2"
 
 # In[2]:
 
@@ -27,16 +29,23 @@ print("`ranking_task` initialized with metrics", ranking_task.metrics)
 
 
 print('data loading ...')
-train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
-dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
-test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+#train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
+#dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
+#test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+train_pack_raw = mz.datasets.msmarco.load_data('train', task=ranking_task)
+dev_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
+test_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
 print('data loaded as `train_pack_raw` `dev_pack_raw` `test_pack_raw`')
 
 
 # In[4]:
 
 
-preprocessor = mz.models.MatchPyramid.get_default_preprocessor()
+#preprocessor = mz.models.MatchPyramid.get_default_preprocessor()
+preprocessor = mz.models.ArcI.get_default_preprocessor(
+    filter_low_freq=3
+)
+
 
 
 # In[5]:
@@ -78,7 +87,7 @@ trainset = mz.dataloader.Dataset(
 )
 testset = mz.dataloader.Dataset(
     data_pack=test_pack_processed,
-    batch_size=20,
+    batch_size=1,
     sort=False,
     shuffle=False
 )
@@ -122,7 +131,7 @@ print('Trainable params: ', sum(p.numel() for p in model.parameters() if p.requi
 # In[11]:
 
 
-optimizer = torch.optim.Adam(model.parameters())
+optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
 
 trainer = mz.trainers.Trainer(
     model=model,
@@ -130,7 +139,14 @@ trainer = mz.trainers.Trainer(
     trainloader=trainloader,
     validloader=testloader,
     validate_interval=None,
-    save_dir='save_match_pyramid',
+#    save_dir='save_match_pyramid',
+#    result_prefix='result_cam.pt',
+#    epochs=10
+#    save_dir='save_match_pyramid_ms',
+#    result_prefix='result_cam.pt',
+#    epochs=10
+    save_dir='save_match_pyramid_ms5',
+    result_prefix='result_cam.pt',
     epochs=5
 )
 

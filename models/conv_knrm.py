@@ -159,8 +159,8 @@ class ConvKNRM(BaseModel):
         for q_conv, d_conv in zip(self.q_convs, self.d_convs):
             q_convs.append(q_conv(q).transpose(1, 2))
             d_convs.append(d_conv(d).transpose(1, 2))
-        print(q_convs[0].shape)
-        q_convs[0][0,0,0].backward()
+        #print(q_convs[0].shape)
+        #q_convs[0][0,0,0].backward()
 
         KM = []
         for qi in range(self._params['max_ngram']):

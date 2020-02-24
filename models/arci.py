@@ -3,6 +3,8 @@ import typing
 
 import torch
 import torch.nn as nn
+from torch.autograd import Variable
+import numpy as np
 
 from matchzoo.engine.param_table import ParamTable
 from matchzoo.engine.base_callback import BaseCallback
@@ -200,6 +202,74 @@ class ArcI(BaseModel):
 
         out = self.out(dense_output)
         return out
+
+    def gradcam_forward(self, inputs):
+        # Left input and right input.
+        # shape = [B, L]
+        # shape = [B, R]
+        input_left, input_right = inputs['text_left'], inputs['text_right']
+
+        # Process left and right input.
+        # shape = [B, D, L]
+        # shape = [B, D, R]
+        embed_left = self.embedding(input_left.long()).transpose(1, 2)
+        embed_right = self.embedding(input_right.long()).transpose(1, 2)
+
+
+        # Convolution
+        # shape = [B, F, L // P]
+        # shape = [B, F, R // P]
+        q_act = self.conv_left(embed_left)
+        d_act = self.conv_right(embed_right)
+
+        q = Variable(q_act, requires_grad=True)
+        d = Variable(d_act, requires_grad=True)
+
+        # shape = [B, F * (L // P)]
+        # shape = [B, F * (R // P)]
+        rep_left = torch.flatten(q, start_dim=1)
+        rep_right = torch.flatten(d, start_dim=1)
+
+        # shape = [B, F * (L // P) + F * (R // P)]
+        concat = self.dropout(torch.cat((rep_left, rep_right), dim=1))
+
+        # shape = [B, *]
+        dense_output = self.mlp(concat)
+
+        out = self.out(dense_output)
+
+        ## 
+        out[0].backward()
+    
+        ##
+        q_grad_val = q.grad.cpu().data.numpy()
+        d_grad_val = d.grad.cpu().data.numpy()
+
+        q_act_val = q_act.cpu().data.numpy()[0, :] 
+        d_act_val = d_act.cpu().data.numpy()[0, :] 
+
+        qweights = np.mean(q_grad_val, axis=2)[0, :]
+        qcam = np.zeros(q_act_val.shape[1:], dtype=np.float32)
+        for i, w in enumerate(qweights):
+            qcam += w * q_act_val[i, :] 
+
+        dweights = np.mean(d_grad_val, axis=2)[0, :]
+        dcam = np.zeros(d_act_val.shape[1:], dtype=np.float32)
+        for i, w in enumerate(dweights):
+            dcam += w * d_act_val[i, :] 
+
+        outputs = {'score' : out[0],
+                   'qgrad' : q_grad_val,
+                   'dgrad' : d_grad_val,
+                   'qcam' : torch.from_numpy(qcam),
+                   'dcam' : torch.from_numpy(dcam),
+                   'qemb' : embed_left,
+                   'demb' : embed_right}
+
+
+        return outputs
+
+
 
     @classmethod
     def _make_conv_pool_block(

@@ -7,12 +7,15 @@
 #get_ipython().run_line_magic('run', 'init.ipynb')
 #import init
 
+import os
 import torch
 import numpy as np
 import pandas as pd
 import matchzoo as mz
 print('matchzoo version', mz.__version__)
 
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="3"
 
 # In[2]:
 ranking_task = mz.tasks.Ranking(losses=mz.losses.RankHingeLoss(margin=1))
@@ -26,9 +29,12 @@ ranking_task.metrics = [
 
 
 print('data loading ...')
-train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
-dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
-test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+#train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
+#dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
+#test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+train_pack_raw = mz.datasets.msmarco.load_data('train', task=ranking_task)
+dev_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
+test_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
 print('data loaded as `train_pack_raw` `dev_pack_raw` `test_pack_raw`')
 
 
@@ -69,14 +75,17 @@ embedding_matrix = embedding_matrix / l2_norm[:, np.newaxis]
 trainset = mz.dataloader.Dataset(
     data_pack=train_pack_processed,
     mode='pair',
-    batch_size=64,
+    batch_size=16,
     resample=True,
+    shuffle=True,
     num_dup=1,
     num_neg=1
 )
 testset = mz.dataloader.Dataset(
     data_pack=test_pack_processed,
-    batch_size=64
+    batch_size=1,
+    sort=False,
+    shuffle=False
 )
 
 
@@ -120,16 +129,16 @@ print('Trainable params: ', sum(p.numel() for p in model.parameters() if p.requi
 # In[10]:
 
 
-optimizer = torch.optim.Adadelta(model.parameters())
+optimizer = torch.optim.Adam(model.parameters(), lr = 0.001)
 
 trainer = mz.trainers.RTrainer(
-    device='cpu',
     model=model,
     optimizer=optimizer,
     trainloader=trainloader,
     validloader=testloader,
     validate_interval=None,
-    save_dir='save_snrm',
+    save_dir='save_snrm_ms',
+    result_prefix='result_cam.pt',
     epochs=10
 )
 

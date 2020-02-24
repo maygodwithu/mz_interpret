@@ -7,12 +7,15 @@
 #get_ipython().run_line_magic('run', 'init.ipynb')
 #import init
 
+import os
 import torch
 import numpy as np
 import pandas as pd
 import matchzoo as mz
 print('matchzoo version', mz.__version__)
 
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="3"
 
 # In[2]:
 ranking_task = mz.tasks.Ranking(losses=mz.losses.RankHingeLoss(margin=1))
@@ -24,9 +27,12 @@ ranking_task.metrics = [
 
 # In[3]:
 print('data loading ...')
-train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
-dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
-test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+#train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
+#dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
+#test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+train_pack_raw = mz.datasets.msmarco.load_data('train', task=ranking_task)
+dev_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
+test_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
 print('data loaded as `train_pack_raw` `dev_pack_raw` `test_pack_raw`')
 
 
@@ -76,6 +82,7 @@ trainset = mz.dataloader.Dataset(
 testset = mz.dataloader.Dataset(
     data_pack=test_pack_processed,
     batch_size=1,
+    sort=False,
     shuffle=False
 )
 
@@ -121,13 +128,12 @@ print('Trainable params: ', sum(p.numel() for p in model.parameters() if p.requi
 
 #pathfinder = mz.interpret.Epath(
 interp = mz.interpret.Grad(
-     device='cpu',
      model=model,
      trainloader=trainloader,
      validloader=testloader,
      checkpoint='model.pt',
-     save_dir='save_snrm',
-     result_prefix='result.pt'
+     save_dir='save_snrm_ms',
+     result_prefix='result_cam.pt'
 )
      
 # In[11]:

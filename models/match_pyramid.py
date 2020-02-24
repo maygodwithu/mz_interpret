@@ -4,6 +4,7 @@ import typing
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
+import numpy as np
 
 from matchzoo.engine.param_table import ParamTable
 from matchzoo.engine.param import Param
@@ -179,6 +180,66 @@ class MatchPyramid(BaseModel):
                    'embcross' : embed_cross}
 
         return outputs
+
+    def gradcam_forward(self, inputs):
+        """grdcam Forward."""
+
+        # Left input and right input.
+        # shape = [B, L]
+        # shape = [B, R]
+        input_left, input_right = inputs['text_left'], inputs['text_right']
+
+        # Process left and right input.
+        # shape = [B, L, D]
+        # shape = [B, R, D]
+        embed_left = self.embedding(input_left.long())
+        embed_right = self.embedding(input_right.long())
+
+        # Compute matching signal
+        # shape = [B, 1, L, R]
+        embed_cross = self.matching(embed_left, embed_right).unsqueeze(dim=1)
+
+        # Convolution
+        # shape = [B, F, L, R]
+        conv_act = self.conv2d(embed_cross)
+        vc = Variable(conv_act, requires_grad=True)
+
+        # Dynamic Pooling
+        # shape = [B, F, P1, P2]
+        embed_pool = self.dpool_layer(vc)
+        #vc = Variable(conv_act, requires_grad=True)
+
+        # shape = [B, F * P1 * P2]
+        embed_flat = self.dropout(torch.flatten(embed_pool, start_dim=1))
+
+        # shape = [B, *]
+        out = self.out(embed_flat)
+
+        # backward
+        out[0].backward()
+
+        grad_val = vc.grad.cpu().data.numpy()
+        act_val = conv_act.cpu().data.numpy()[0, :] 
+
+        weights = np.mean(grad_val, axis=(2, 3))[0, :]
+        cam = np.zeros(act_val.shape[1:], dtype=np.float32)
+        for i, w in enumerate(weights):
+            cam += w * act_val[i, :, :] 
+
+#        cam = np.maximum(cam, 0)
+
+        qcam = np.mean(cam, axis=1)
+        dcam = np.mean(cam, axis=0)
+
+        outputs = {'score' : out[0],
+                   'grad' : torch.from_numpy(grad_val),
+                   'cam' : torch.from_numpy(cam),
+                   'qcam' : torch.from_numpy(qcam),
+                   'dcam' : torch.from_numpy(dcam),
+                   'embcross' : embed_cross}
+
+        return outputs
+
 
 
     @classmethod

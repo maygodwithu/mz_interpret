@@ -2,14 +2,15 @@
 # coding: utf-8
 
 # In[1]:
-
-
+import os
 import torch
 import numpy as np
 import pandas as pd
 import matchzoo as mz
 print('matchzoo version', mz.__version__)
 
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="3"
 
 # In[2]:
 
@@ -27,16 +28,22 @@ print("`ranking_task` initialized with metrics", ranking_task.metrics)
 
 
 print('data loading ...')
-train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
-dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
-test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+#train_pack_raw = mz.datasets.wiki_qa.load_data('train', task=ranking_task)
+#dev_pack_raw = mz.datasets.wiki_qa.load_data('dev', task=ranking_task, filtered=True)
+#test_pack_raw = mz.datasets.wiki_qa.load_data('test', task=ranking_task, filtered=True)
+train_pack_raw = mz.datasets.msmarco.load_data('train', task=ranking_task)
+dev_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
+test_pack_raw = mz.datasets.msmarco.load_data('dev', task=ranking_task, filtered=True)
 print('data loaded as `train_pack_raw` `dev_pack_raw` `test_pack_raw`')
 
 
 # In[4]:
 
 
-preprocessor = mz.models.MatchPyramid.get_default_preprocessor()
+#preprocessor = mz.models.MatchPyramid.get_default_preprocessor()
+preprocessor = mz.models.ArcI.get_default_preprocessor(
+    filter_low_freq=3
+)
 
 
 # In[5]:
@@ -121,17 +128,20 @@ print('Trainable params: ', sum(p.numel() for p in model.parameters() if p.requi
 
 # In[11]:
 interp = mz.interpret.Grad(
-     device='cpu',
      model=model,
      trainloader=trainloader,
      validloader=testloader,
      checkpoint='model.pt',
-     save_dir='save_match_pyramid',
-     result_prefix='result.pt'
+#     save_dir='save_match_pyramid_ms5',
+#     result_prefix='result_cam.pt'
+     save_dir='save_match_pyramid_ms5',
+     result_prefix='result_cam.pt'
 )
      
 # In[12]:
-interp.gradXinput()
+#interp.gradXinput()
+interp.gradCam()
+#interp.statScore()
 
 
 

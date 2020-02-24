@@ -190,12 +190,12 @@ class SNRM(BaseModel):
         q_act_val = q_act.cpu().data.numpy()[0, :] 
         d_act_val = d_act.cpu().data.numpy()[0, :] 
 
-        qweights = np.mean(q_grad_val, axis=(2, 3))[0, :]
+        qweights = np.mean(q_grad_val, axis=(2,3))[0, :]
         qcam = np.zeros(q_act_val.shape[1:], dtype=np.float32)
         for i, w in enumerate(qweights):
             qcam += w * q_act_val[i, :, :] 
 
-        dweights = np.mean(d_grad_val, axis=(2, 3))[0, :]
+        dweights = np.mean(d_grad_val, axis=(2,3))[0, :]
         dcam = np.zeros(d_act_val.shape[1:], dtype=np.float32)
         for i, w in enumerate(dweights):
             dcam += w * d_act_val[i, :, :] 

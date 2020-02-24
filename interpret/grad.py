@@ -413,7 +413,9 @@ class Grad:
             outputs.update(inputs)
             torch.save(outputs, resultfile) 
             num += 1
-            if(num > 10):
+            if(num %100 == 0):
+                print(num, " lines processed\r", end='')
+            if(num > 2000):
                 break
 
         return None
@@ -437,10 +439,52 @@ class Grad:
             outputs.update(inputs)
             torch.save(outputs, resultfile) 
             num += 1
-            if(num > 10):
+            if(num %100 == 0):
+                print(num, " lines processed\r", end='')
+            if(num > 50000):
                 break
 
         return None
+
+    def make_key(self, xa):
+        key = None
+        for v in xa:
+            if(key is None):
+                key = str(v) 
+            else:
+                key += "," + str(v)
+        return key
+
+    def statScore(self):
+        """
+        Generate score 
+
+        :return: np array of score
+
+        """
+        if(self._result_pre is None):
+            self._result_pre = 'result_stat.pt'
+
+        self._model.eval()
+        num=0
+        
+        resultfile = self._save_dir.joinpath(self._result_pre + '_stat')
+        fp = open(resultfile, 'w')
+        for batch in self._validloader:
+            inputs = batch[0]
+            outputs = self._model.forward(inputs)
+            outputs = outputs.squeeze(0)
+
+            
+            key = self.make_key(inputs['text_left'].cpu().squeeze(0).numpy())
+            print(key, "\t", outputs.item(), file=fp)
+
+            num += 1
+            if(num %100 == 0):
+                print(num, " lines processed\r", end='')
+
+        return None
+
 
 
 
